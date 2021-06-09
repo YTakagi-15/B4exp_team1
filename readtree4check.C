@@ -9,7 +9,6 @@
 //	CAUTIOON!!!!! this is not proper on plotting!!!!!!!
 //
 
-#include<vector>
 
 void readtree4check(){
 

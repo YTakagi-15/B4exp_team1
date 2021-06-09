@@ -8,8 +8,6 @@
 //	
 //
 
-#include<vector>
-
 void readtree(int ent){
 //load .root file-channel as ttree
 TString filename = "./sci1001.root";
