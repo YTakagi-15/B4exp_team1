@@ -15,7 +15,7 @@ const Int_t bin_num_x = 4;
 const Int_t bin_num_y = 8;
 
 //load .root file-channel as ttree
-TString filename = "./sci1001.root";
+TString filename = "./data/sci1001.root";
 TString name = "tree";
 TFile *fin = new TFile(filename,"read");
 TTree *t = (TTree*)fin->Get(name);
@@ -41,25 +41,3 @@ for(Int_t i = 0;i <= bin_num_y * bin_num_x - 1;i++){
 f1->Draw("colz");
 }
 
-
-/*
-TString ifn = "./sci1001.root";
-TFile *fin = new TFile(ifn,"read");
-TTree *tin = (TTree*)fin->Get("tree");
-
-Int_t mode;
-Int_t ADC_HIGH_1;
-Double_t val[100];
-vector<TString> chname;
-//for(Int_t i = 0;i < 60;i++){
-//chname.push_back(Form("ADC_HIGH_%s",i));
-//}
-//tin->SetBranchAddress(chname[0], &chname[0]);
-tin->SetBranchAddress("ADC_HIGH_1", &ADC_HIGH_1);
-
- const Int_t N = tin->GetEntries();
- for(Int_t ientry = 0; ientry < N; ientry++){
-  tin->GetEntry(ientry);
-  printf("ADC_HIGH_1:%f\n",ADC_HIGH_1);
- }
-}*/

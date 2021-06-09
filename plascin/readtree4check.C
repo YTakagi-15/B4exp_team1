@@ -19,7 +19,7 @@ const Int_t threshold = 1100;
 const Int_t half_pi = 3.1415/2;
 
 //load .root file-channel as ttree
-TString filename = "./sci1003.root";
+TString filename = "./data/sci1003.root";
 TString name = "tree";
 TFile *fin = new TFile(filename,"read");
 TTree *t = (TTree*)fin->Get(name);

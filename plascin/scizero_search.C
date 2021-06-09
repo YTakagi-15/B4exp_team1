@@ -16,7 +16,7 @@ result.push_back(nono);
 int gaus_peak_num = 5;
 
 //load .root file-channel as hist
-TString filename = Form("./led%i.root",nn);
+TString filename = Form("./data/led%i.root",nn);
 TString name = Form("ADC_HIGH_%i",nono);
 TFile *fin = new TFile(filename,"read");
 TH1D *h = (TH1D*)fin->Get(name);
