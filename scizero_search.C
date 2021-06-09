@@ -6,10 +6,6 @@
 //	
 //	usage notion:plz use in the directory has led[datano].root files
 
-#include <TFile.h>
-#include <TH1.h>
-#include <TString.h>
-#include<vector>
 //plz give me fileno, datachannel
 void scizero_search(){
 for(int nn = 10,)

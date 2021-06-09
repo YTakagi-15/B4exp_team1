@@ -8,7 +8,6 @@
 //	note:for(get tan theta) and draw histogram
 //
 
-#include<vector>
 
 void readtree3check(){
 
