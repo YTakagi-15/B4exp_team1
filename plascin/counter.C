@@ -21,7 +21,7 @@ const double_t zpeak = fitdatas[3];
 
 //load .root file and choice histogram which 
 TString name = Form("ADC_HIGH_%i",nono);
-TString filename = Form("./led%i.root",nn);
+TString filename = Form("./data/led%i.root",nn);
 TFile *fin = new TFile(filename,"read");
 TH1D *h = (TH1D*)fin->Get(name);
 
@@ -48,7 +48,7 @@ for(int i = 0;i < how_many_photons;i++){
 
 /*
 			//write to txt file
-			TString filename1("./datas.txt");
+			TString filename1("./data/datas.txt");
 			fstream file_out;
 			file_out.open(filename1, ios_base::app);		
 			int write_to_file;

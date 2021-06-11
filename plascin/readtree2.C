@@ -12,7 +12,7 @@
 void readtree2(Int_t entry_no){
 
 //load .root file-channel as ttree(named t)
-TString filename = "./sci1001.root";
+TString filename = "./data/sci1001.root";
 TString name = "tree";
 TFile *fin = new TFile(filename,"read");
 TTree *t = (TTree*)fin->Get(name);

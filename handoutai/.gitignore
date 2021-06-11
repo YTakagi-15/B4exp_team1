@@ -1,0 +1,3 @@
+#datとrootを除く（datめっさ重い）
+*.dat
+*.root
