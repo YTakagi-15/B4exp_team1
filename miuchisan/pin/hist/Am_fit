@@ -1,0 +1,68 @@
+
+vector<vector<Double_t>> Am_hist(){
+
+TString FILENAME = "Am_change";
+TString hist_name = "Am";
+TString xtitle = "ADALM value";
+TString ytitle = "Events";
+
+/*TH1D* hist = Am_20210616_2_0.dat(
+ * FILENAME,
+ * hist_name
+ * hist_name + ";" + xtitle + ";" + ytitle,
+ * 1000,
+ * 0,
+ * 2500
+ * );
+ * */
+
+
+TCanvas *canvas = new TCanvas();
+
+
+TH1F *themad = new TH1F("themad" ,"themad ; ADALM channsl; Events" , 1024 , 0 , 1024);
+
+string buff;
+bool is_data = false;
+ifstream ifs;
+int i = 0;
+ifs.open("./210527 241Am coarse5.mca");
+while (ifs >> buff){
+  if (buff == "<<END>>")is_data = false;
+  if (is_data){
+    for (int j=0; j <stoi(buff); j++){
+      themad->Fill(i);
+    }
+    i++;
+  }
+ifs.close();
+
+themad->Draw();
+
+
+ TF1* f1 = new TF1 ("f1", "[0]*TMath::Gaus(x,[1],[2])", 100,250);
+ TF1* f2 = new TF1 ("f2", "[0]*TMath::Gaus(x,[1],[2])", 500 ,630);
+
+ f1->SetParName(0, "Const");
+ f2->SetParName(0, "Const");
+ f1->SetParName(1, "Mean");
+ f1->SetParName(1, "Mean");
+ f2->SetParName(1, "Const");
+ f1->SetParName(2, "Sigma");
+ f2->SetParName(2, "Sigma");
+
+ f1->SetParameters(194,163,40);
+ f2->SetParameters(33,559,27);
+
+ themad->Fit(f1, "R");
+ themad->Fit(f2,"R+");
+
+ vector<Double_t> kev= {26.3 , 59.5};
+ vector<Double_t> mean = {f1->GetParameter(1), f2->GetParameter(1)};
+ vector<Double_t> mean_error = {f1->GetParError(1), f2->GetParError(1)};
+ vector<vector<Double_t>> res =  {kev,mean ,mean_error};
+ return res;
+
+ }
+ } 
+

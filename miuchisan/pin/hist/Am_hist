@@ -1,0 +1,26 @@
+{
+TCanvas *canvas = new TCanvas();
+
+
+TH1F *themad = new TH1F("themad" ,"themad ; ADALM channsl; Events" , 1024 , 0 , 1024);
+
+string buff;
+bool is_data = false;
+ifstream ifs;
+int i = 0;
+ifs.open("../data/Am_20210616_2_0.dat");
+while (ifs >> buff){
+  if (buff == "<<END>>")is_data = false;
+  if (is_data){
+    for (int j=0; j <stoi(buff); j++){
+      themad->Fill(i);
+    }
+    i++;
+  }
+  if (buff == "<<DATA>>") is_data = true;
+ }
+ifs.close();
+
+themad->Draw();
+}
+

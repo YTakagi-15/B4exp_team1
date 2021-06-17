@@ -1,0 +1,13 @@
+---------- RUN CONFIGURE ----------
+RUN CONFIG FILE NAME   : out5.cnf
+OUTPUT FILE NAME       : out5
+SAMPLING RATE          : 1000000.0 (Hz)
+SAMPLING NUMBER        : 1024
+DYNAMIC RANGE          : 2 (0=+/-25V,1=+/-2.5V)
+TRIGGER THRESHOLD CH1  : 0.010 (V)
+TRIGGER THRESHOLD CH2  : 0.100 (V)
+TRIGGER SOURCE         : 0    [ch1=0,ch2=1,or-trig=2,and-trig=3]
+TRIGGER EDGE (R=0,F=1) : 0
+-----------------------------------
+RUN START : timestamp 1623758440.826951
+SUBRUN0 START : timestamp 1623758440.827095

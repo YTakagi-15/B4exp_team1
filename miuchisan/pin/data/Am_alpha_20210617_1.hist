@@ -1,0 +1,32 @@
+void Am_alpha_20210617_1(){
+	ifstream ifs("../data/Am_alpha_20210617_1_0.dat");
+	string buff ;
+	int a = 1;
+	int b;
+	int c;
+
+	TH1D * hist = new TH1D ("","", 500 , 0, 3000);
+
+	while(ifs >> buff ){
+		//cout << buff << endl;
+		if( a != 2054 ){
+
+			if( a >= 6 ){
+				if( a % 2 == 0 ){
+					b = stoi(buff);}
+			}
+		}
+		if( c <= b ){ c = b;}
+		if( a == 2053 ){
+			hist->Fill(c);}
+		if ( a == 2055 ){
+			a = 0;
+			b = 0;
+			c = 0;}
+		a++;
+		//if(a > )break;
+	}
+	hist->Draw();
+
+	//intger
+}

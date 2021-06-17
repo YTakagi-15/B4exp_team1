@@ -1,0 +1,14 @@
+---------- RUN CONFIGURE ----------
+RUN CONFIG FILE NAME   : out.cnf
+OUTPUT FILE NAME       : out.dat
+SAMPLING RATE          : 1000000.0 (Hz)
+SAMPLING NUMBER        : 4096
+DYNAMIC RANGE          : 2.000 (V)
+TRIGGER THRESHOLD CH1  : 0.100 (V)
+TRIGGER THRESHOLD CH2  : 0.100 (V)
+TRIGGER SOURCE         : 2
+TRIGGER EDGE (R=0,F=1) : 0
+-----------------------------------
+RUN START : timestamp 1601610569.052443
+
+RUN END : timestamp 1601610574.970536
